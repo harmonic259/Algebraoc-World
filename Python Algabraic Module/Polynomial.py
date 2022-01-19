@@ -22,6 +22,17 @@ class Polynomial:
         ans_poly = Polynomial(new_coeff, new_deg)
         return ans_poly
 
+    def integral(self):
+        new_coeff = [0]
+        new_deg = self.degree - 1
+        c = 1
+        for x in self.coefficients:
+            new_coeff = new_coeff + [x / c]
+            c = c + 1
+        ans_poly = Polynomial(new_coeff, new_deg)
+        return ans_poly
+
+
 
 
 
