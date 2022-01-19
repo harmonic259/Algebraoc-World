@@ -3,6 +3,24 @@ class Polynomial:
         self.coefficients = coefficients
         self.degree = degree
 
+    def set(self, poly):
+        self.coefficients = poly.coefficients
+        self.degree = poly.degree
+
+    def get_coefficients(self):
+        return self.coefficients
+
+    def print_polynomial(self):
+        i = 0
+        for c in self.coefficients:
+            if c == self.coefficients[self.degree]:
+                print(str(c)+"*x^"+str(i), end=" ")
+            elif c == self.coefficients[0]:
+                print(str(c) + " +", end=" ")
+            else:
+                print(str(c) + "*x^" + str(i) + " +", end=" ")
+            i = i + 1
+
     def value(self, x):
         ans = 0
         i = 0
@@ -31,6 +49,9 @@ class Polynomial:
             c = c + 1
         ans_poly = Polynomial(new_coeff, new_deg)
         return ans_poly
+
+
+
 
 
 
